@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa hàng hoa tươi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🌸 Flower Shop</div>
+            <ul>
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="birthday.html">Hoa Sinh Nhật</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+                <li>
+                    <a href="#" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Modal Giỏ hàng -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Giỏ hàng của bạn</h2>
+            <div id="cart-items">
+                <!-- Các sản phẩm trong giỏ hàng sẽ được thêm vào đây -->
+            </div>
+            <div id="cart-summary">
+                <div class="cart-total">
+                    <strong>Tổng cộng:</strong>
+                    <span id="cart-total">0đ</span>
+                </div>
+                <button id="checkout-btn" class="checkout-btn">Thanh toán</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Thanh toán -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Thanh toán</h2>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="name">Họ và tên:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số điện thoại:</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Địa chỉ giao hàng:</label>
+                    <textarea id="address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="payment-method">Phương thức thanh toán:</label>
+                    <select id="payment-method" required>
+                        <option value="cod">Thanh toán khi nhận hàng</option>
+                        <option value="bank">Chuyển khoản ngân hàng</option>
+                    </select>
+                </div>
+                <div id="bank-info" class="hidden">
+                    <p>Thông tin chuyển khoản:</p>
+                    <p>Ngân hàng: VCB</p>
+                    <p>Số tài khoản: 1234567890</p>
+                    <p>Chủ tài khoản: FLOWER SHOP</p>
+                </div>
+                <button type="submit" class="checkout-btn">Xác nhận đặt hàng</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Chi tiết sản phẩm -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content product-detail">
+            <span class="close">&times;</span>
+            <div class="product-detail-content">
+                <div class="product-detail-image">
+                    <img src="" alt="" id="modal-product-image">
+                </div>
+                <div class="product-detail-info">
+                    <h2 id="modal-product-name"></h2>
+                    <p id="modal-product-description"></p>
+                    <p class="price" id="modal-product-price"></p>
+                    <div class="product-detail-features">
+                        <h3>Đặc điểm sản phẩm:</h3>
+                        <ul>
+                            <li>Hoa tươi mới cắt trong ngày</li>
+                            <li>Được chăm sóc bởi các chuyên gia hoa</li>
+                            <li>Bảo quản trong môi trường nhiệt độ thích hợp</li>
+                            <li>Giao hàng nhanh trong vòng 2 giờ</li>
+                        </ul>
+                    </div>
+                    <div class="product-detail-quantity">
+                        <label for="quantity">Số lượng:</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                            <input type="number" id="quantity" value="1" min="1">
+                            <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                        </div>
+                    </div>
+                    <button class="add-to-cart-detail" onclick="addToCartFromDetail()">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section id="hero">
+            <h1>Chào mừng đến với cửa hàng hoa tươi</h1>
+            <p>Nơi mang đến những bông hoa tươi thắm nhất cho người thân yêu của bạn</p>
+        </section>
+
+        <section id="products">
+            <h2>Sản phẩm của chúng tôi</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/red-roses.jpg" alt="Hoa hồng đỏ">
+                    <h3>Hoa hồng đỏ</h3>
+                    <p>Biểu tượng của tình yêu và sự lãng mạn</p>
+                    <p class="price">350.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/lily.jpg" alt="Hoa ly">
+                    <h3>Hoa ly</h3>
+                    <p>Thanh khiết và tinh tế</p>
+                    <p class="price">280.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/sunflower.jpg" alt="Hoa hướng dương">
+                    <h3>Hoa hướng dương</h3>
+                    <p>Tràn đầy năng lượng tích cực</p>
+                    <p class="price">200.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/hydrangea.jpg" alt="Hoa cẩm tú cầu">
+                    <h3>Hoa cẩm tú cầu</h3>
+                    <p>Vẻ đẹp dịu dàng, thanh lịch</p>
+                    <p class="price">320.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="birthday-flowers">
+            <h2>Hoa Sinh Nhật</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/hoasinhnhat/hoasinhnhat.jpg" alt="Hoa sinh nhật rực rỡ">
+                    <h3>Bó Hoa Sinh Nhật Rực Rỡ</h3>
+                    <p>Bó hoa tươi thắm dành cho ngày đặc biệt</p>
+                    <p class="price">400.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/hoasinhnhat/hoasinhnhat-2.jpg" alt="Giỏ hoa sinh nhật">
+                    <h3>Giỏ Hoa Sinh Nhật</h3>
+                    <p>Giỏ hoa tươi đầy màu sắc cho tiệc sinh nhật</p>
+                    <p class="price">450.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/hoasinhnhat/hoasinhnhat-3.jpg" alt="Hộp hoa sinh nhật">
+                    <h3>Hộp Hoa Sinh Nhật</h3>
+                    <p>Hộp hoa xinh xắn với thiết kế độc đáo</p>
+                    <p class="price">380.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/hoasinhnhat/hoasinhnhat-4.jpg" alt="Bó hoa sinh nhật đặc biệt">
+                    <h3>Bó Hoa Sinh Nhật Đặc Biệt</h3>
+                    <p>Bó hoa độc đáo cho người thân yêu</p>
+                    <p class="price">500.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Liên hệ với chúng tôi</h2>
+            <div class="contact-info">
+                <p>📞 Hotline: 0911555441</p>
+                <p>📧 Email: loclua229@gmail.com</p>
+                <p>🏠 Địa chỉ: đường miếu ông hổ, khu vực, Ô Môn, Cần Thơ, Việt Nam</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về Flower Shop</h3>
+                <ul>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                    <li><a href="why-choose-us.html">Tại Sao Nên Chọn Flower Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Chính Sách</h3>
+                <ul>
+                    <li><a href="shipping-policy.html">Chính Sách Vận Chuyển</a></li>
+                    <li><a href="refund-policy.html">Chính Sách Hoàn Tiền</a></li>
+                    <li><a href="privacy-policy.html">Bảo Mật Thông Tin</a></li>
+                    <li><a href="complaint-policy.html">Xử Lý Khiếu Nại</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Hỗ Trợ Khách Hàng</h3>
+                <ul>
+                    <li><a href="faq.html">Câu Hỏi Thường Gặp</a></li>
+                    <li><a href="payment-methods.html">Hình Thức Thanh Toán</a></li>
+                    <li>
+                        <p>📞 Hotline: 0911555441</p>
+                        <p>📧 Email: loclua229@gmail.com</p>
+                        <p>🏠 Địa chỉ: đường miếu ông hổ, khu vực, Ô Môn, Cần Thơ, Việt Nam</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kết Nối Với Chúng Tôi</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61555874876724" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://zalo.me/0911555441" class="social-link" target="_blank"><i class="fab fa-comment"></i></a>
+                    <a href="https://www.instagram.com/flowershop" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/flowershop" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/@flowershop" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Flower Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

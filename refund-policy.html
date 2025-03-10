@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính Sách Hoàn Tiền - Flower Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .refund-policy {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .policy-section {
+            background: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .policy-section h2 {
+            color: #ff69b4;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff69b4;
+        }
+
+        .policy-content {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .policy-content ul, .policy-content ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .policy-content li {
+            margin-bottom: 10px;
+        }
+
+        .refund-steps {
+            background: #fff3f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .refund-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 5px;
+        }
+
+        .step-number {
+            background: #ff69b4;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .policy-note {
+            background: #f9f9f9;
+            border-left: 4px solid #ff69b4;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .contact-support {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-support h3 {
+            color: #ff69b4;
+            margin-bottom: 15px;
+        }
+
+        .support-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .support-button {
+            background: #ff69b4;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .support-button:hover {
+            background: #ff4d94;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🌸 Flower Shop</div>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="index.html#products">Sản phẩm</a></li>
+                <li><a href="birthday.html">Hoa Sinh Nhật</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+                <li>
+                    <a href="#" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-template">
+        <h1>Chính Sách Hoàn Tiền</h1>
+
+        <div class="refund-policy">
+            <div class="policy-section">
+                <h2>1. Điều Kiện Hoàn Tiền</h2>
+                <div class="policy-content">
+                    <p>Flower Shop cam kết hoàn tiền trong các trường hợp sau:</p>
+                    <ul>
+                        <li>Sản phẩm không đúng với mô tả hoặc hình ảnh</li>
+                        <li>Sản phẩm bị hư hỏng trong quá trình vận chuyển</li>
+                        <li>Giao hàng trễ hơn thời gian cam kết</li>
+                        <li>Số lượng hoặc chủng loại hoa không đúng với đơn đặt hàng</li>
+                    </ul>
+                    <div class="policy-note">
+                        <strong>Lưu ý:</strong> Yêu cầu hoàn tiền phải được thực hiện trong vòng 24 giờ kể từ khi nhận hàng.
+                    </div>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>2. Quy Trình Hoàn Tiền</h2>
+                <div class="policy-content">
+                    <div class="refund-steps">
+                        <div class="refund-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <strong>Gửi yêu cầu hoàn tiền</strong>
+                                <p>Liên hệ với chúng tôi qua hotline hoặc email, cung cấp mã đơn hàng và lý do hoàn tiền</p>
+                            </div>
+                        </div>
+                        <div class="refund-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <strong>Xác minh thông tin</strong>
+                                <p>Chúng tôi sẽ kiểm tra và xác minh thông tin trong vòng 24 giờ</p>
+                            </div>
+                        </div>
+                        <div class="refund-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <strong>Phê duyệt hoàn tiền</strong>
+                                <p>Nếu yêu cầu hợp lệ, chúng tôi sẽ tiến hành hoàn tiền</p>
+                            </div>
+                        </div>
+                        <div class="refund-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <strong>Nhận tiền hoàn</strong>
+                                <p>Tiền sẽ được hoàn về tài khoản của bạn trong 3-5 ngày làm việc</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>3. Phương Thức Hoàn Tiền</h2>
+                <div class="policy-content">
+                    <p>Tiền hoàn sẽ được chuyển theo phương thức thanh toán ban đầu:</p>
+                    <ul>
+                        <li>Thanh toán thẻ: Hoàn về thẻ gốc</li>
+                        <li>Chuyển khoản: Hoàn về tài khoản nguồn</li>
+                        <li>Ví điện tử: Hoàn về ví điện tử</li>
+                        <li>Tiền mặt: Chuyển khoản theo thông tin khách hàng cung cấp</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2>4. Trường Hợp Đặc Biệt</h2>
+                <div class="policy-content">
+                    <p>Chúng tôi sẽ xem xét hoàn tiền trong các trường hợp:</p>
+                    <ul>
+                        <li>Sự kiện bất khả kháng (thiên tai, dịch bệnh)</li>
+                        <li>Lỗi hệ thống dẫn đến đặt hàng thất bại</li>
+                        <li>Cửa hàng không thể cung cấp sản phẩm đã đặt</li>
+                    </ul>
+                    <div class="policy-note">
+                        <strong>Bồi thường thêm:</strong> Trong trường hợp lỗi từ phía chúng tôi, khách hàng sẽ được bồi thường thêm 20% giá trị đơn hàng.
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-support">
+                <h3>Cần Hỗ Trợ?</h3>
+                <p>Chúng tôi luôn sẵn sàng hỗ trợ bạn với mọi thắc mắc về hoàn tiền</p>
+                <div class="support-buttons">
+                    <a href="tel:0123456789" class="support-button">
+                        <i class="fas fa-phone"></i>
+                        Gọi Hotline
+                    </a>
+                    <a href="mailto:support@flowershop.com" class="support-button">
+                        <i class="fas fa-envelope"></i>
+                        Gửi Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về Flower Shop</h3>
+                <ul>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                    <li><a href="why-choose-us.html">Tại Sao Nên Chọn Flower Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Chính Sách</h3>
+                <ul>
+                    <li><a href="shipping-policy.html">Chính Sách Vận Chuyển</a></li>
+                    <li><a href="refund-policy.html">Chính Sách Hoàn Tiền</a></li>
+                    <li><a href="privacy-policy.html">Bảo Mật Thông Tin</a></li>
+                    <li><a href="complaint-policy.html">Xử Lý Khiếu Nại</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Hỗ Trợ Khách Hàng</h3>
+                <ul>
+                    <li><a href="faq.html">Câu Hỏi Thường Gặp</a></li>
+                    <li><a href="payment-methods.html">Hình Thức Thanh Toán</a></li>
+                    <li>
+                        <p>📞 Hotline: 0123 456 789</p>
+                        <p>📧 Email: info@flowershop.com</p>
+                        <p>🏠 Địa chỉ: 123 Đường Hoa, Quận 1, TP.HCM</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kết Nối Với Chúng Tôi</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Flower Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

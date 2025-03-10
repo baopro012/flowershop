@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - Flower Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-form button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-form button:hover {
+            background-color: #ff4d94;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-info-item {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .contact-info-item i {
+            font-size: 2rem;
+            color: #ff69b4;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🌸 Flower Shop</div>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="index.html#products">Sản phẩm</a></li>
+                <li><a href="birthday.html">Hoa Sinh Nhật</a></li>
+                <li><a href="contact.html" class="active">Liên hệ</a></li>
+                <li>
+                    <a href="#" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-template">
+        <h1>Liên Hệ Với Chúng Tôi</h1>
+
+        <div class="contact-info-grid">
+            <div class="contact-info-item">
+                <i class="fas fa-phone"></i>
+                <h3>Điện thoại</h3>
+                <p>Hotline: 0911555441</p>
+                <p>Giờ làm việc: 8:00 - 22:00</p>
+            </div>
+            <div class="contact-info-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>loclua229@gmail.com</p>
+            </div>
+            <div class="contact-info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Địa chỉ</h3>
+                <p>📞 Hotline: 0911555441</p>
+                <p>📧 Email: loclua229@gmail.com</p>
+                <p>🏠 Địa chỉ: đường miếu ông hổ, khu vực, Ô Môn, Cần Thơ, Việt Nam</p>
+            </div>
+        </div>
+
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Họ và tên:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Chủ đề:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Nội dung:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Gửi tin nhắn</button>
+        </form>
+
+        <div style="margin-top: 40px;">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62728.887030176204!2d105.6987196!3d10.1022591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a08765128394ef%3A0x283a00e8231e5c59!2sCh%E1%BA%A3%20L%E1%BB%A5a%20Ho%C3%A0i%20Linh!5e0!3m2!1svi!2s!4v1710072345678"
+                width="100%" 
+                height="450" 
+                style="border:0; border-radius: 10px;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về Flower Shop</h3>
+                <ul>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                    <li><a href="why-choose-us.html">Tại Sao Nên Chọn Flower Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Chính Sách</h3>
+                <ul>
+                    <li><a href="shipping-policy.html">Chính Sách Vận Chuyển</a></li>
+                    <li><a href="refund-policy.html">Chính Sách Hoàn Tiền</a></li>
+                    <li><a href="privacy-policy.html">Bảo Mật Thông Tin</a></li>
+                    <li><a href="complaint-policy.html">Xử Lý Khiếu Nại</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Hỗ Trợ Khách Hàng</h3>
+                <ul>
+                    <li><a href="faq.html">Câu Hỏi Thường Gặp</a></li>
+                    <li><a href="payment-methods.html">Hình Thức Thanh Toán</a></li>
+                    <li>
+                        <p>📞 Hotline: 0911555441</p>
+                        <p>📧 Email: loclua229@gmail.com</p>
+                        <p>🏠 Địa chỉ: đường miếu ông hổ, khu vực, Ô Môn, Cần Thơ, Việt Nam</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kết Nối Với Chúng Tôi</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61555874876724" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://zalo.me/0911555441" class="social-link" target="_blank"><i class="fab fa-comment"></i></a>
+                    <a href="https://www.instagram.com/flowershop" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/flowershop" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/@flowershop" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Flower Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Flower Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .blog-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-category {
+            color: #ff69b4;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .blog-title {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .read-more {
+            color: #ff69b4;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .read-more:hover {
+            color: #ff4d94;
+        }
+
+        .blog-filters {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            padding: 8px 15px;
+            border: 2px solid #ff69b4;
+            border-radius: 20px;
+            background: none;
+            color: #ff69b4;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-button:hover,
+        .filter-button.active {
+            background: #ff69b4;
+            color: white;
+        }
+
+        .featured-post {
+            background: #fff3f9;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .featured-content {
+            padding: 20px;
+        }
+
+        .featured-tag {
+            background: #ff69b4;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .featured-title {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .featured-excerpt {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        .search-bar {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .search-button {
+            background: #ff69b4;
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background: #ff4d94;
+        }
+
+        @media (max-width: 768px) {
+            .featured-post {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🌸 Flower Shop</div>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="index.html#products">Sản phẩm</a></li>
+                <li><a href="birthday.html">Hoa Sinh Nhật</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+                <li>
+                    <a href="#" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-template">
+        <div class="blog-container">
+            <h1>Blog</h1>
+
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Tìm kiếm bài viết...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="blog-filters">
+                <button class="filter-button active">Tất cả</button>
+                <button class="filter-button">Chăm sóc hoa</button>
+                <button class="filter-button">Cắm hoa</button>
+                <button class="filter-button">Trang trí</button>
+                <button class="filter-button">Ý nghĩa hoa</button>
+                <button class="filter-button">Mẹo hay</button>
+            </div>
+
+            <div class="featured-post">
+                <img src="images/red-roses.jpg" alt="Nghệ thuật cắm hoa hồng" class="featured-image">
+                <div class="featured-content">
+                    <span class="featured-tag">Bài viết nổi bật</span>
+                    <h2 class="featured-title">Nghệ Thuật Cắm Hoa: Từ Cơ Bản Đến Nâng Cao</h2>
+                    <p class="featured-excerpt">
+                        Khám phá những bí quyết và kỹ thuật cắm hoa chuyên nghiệp, từ việc chọn hoa, dụng cụ cần thiết đến các bước thực hiện chi tiết để tạo nên những tác phẩm nghệ thuật từ hoa tươi.
+                    </p>
+                    <a href="#" class="read-more">Đọc tiếp →</a>
+                </div>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="images/lily.jpg" alt="Chăm sóc hoa ly" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-category">Chăm sóc hoa</div>
+                        <h3 class="blog-title">Bí Quyết Chăm Sóc Hoa Ly Luôn Tươi Đẹp</h3>
+                        <p class="blog-excerpt">
+                            Hướng dẫn chi tiết cách chăm sóc hoa ly để chúng luôn tươi đẹp và nở rộ trong thời gian dài.
+                        </p>
+                        <div class="blog-meta">
+                            <span>5 phút đọc</span>
+                            <a href="#" class="read-more">Đọc tiếp →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="images/sunflower.jpg" alt="Hoa hướng dương" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-category">Ý nghĩa hoa</div>
+                        <h3 class="blog-title">Ý Nghĩa Của Hoa Hướng Dương Trong Cuộc Sống</h3>
+                        <p class="blog-excerpt">
+                            Khám phá ý nghĩa sâu sắc và thông điệp mà hoa hướng dương mang lại trong văn hóa và cuộc sống.
+                        </p>
+                        <div class="blog-meta">
+                            <span>4 phút đọc</span>
+                            <a href="#" class="read-more">Đọc tiếp →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="images/hydrangea.jpg" alt="Hoa cẩm tú cầu" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-category">Trang trí</div>
+                        <h3 class="blog-title">Trang Trí Nhà Với Hoa Cẩm Tú Cầu</h3>
+                        <p class="blog-excerpt">
+                            Những ý tưởng độc đáo để trang trí không gian sống với hoa cẩm tú cầu tươi và khô.
+                        </p>
+                        <div class="blog-meta">
+                            <span>6 phút đọc</span>
+                            <a href="#" class="read-more">Đọc tiếp →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="images/blog4.jpg" alt="Bảo quản hoa" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-category">Mẹo hay</div>
+                        <h3 class="blog-title">5 Cách Bảo Quản Hoa Tươi Lâu Trong Mùa Hè</h3>
+                        <p class="blog-excerpt">
+                            Những mẹo đơn giản giúp giữ hoa tươi lâu hơn trong điều kiện thời tiết nóng ẩm.
+                        </p>
+                        <div class="blog-meta">
+                            <span>6 phút đọc</span>
+                            <a href="#" class="read-more">Đọc tiếp →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="images/blog5.jpg" alt="Cắm hoa nghệ thuật" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-category">Cắm hoa</div>
+                        <h3 class="blog-title">Nghệ Thuật Cắm Hoa Theo Phong Cách Ikebana</h3>
+                        <p class="blog-excerpt">
+                            Tìm hiểu về nghệ thuật cắm hoa Ikebana của Nhật Bản và cách áp dụng vào trang trí nhà cửa.
+                        </p>
+                        <div class="blog-meta">
+                            <span>8 phút đọc</span>
+                            <a href="#" class="read-more">Đọc tiếp →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="images/blog6.jpg" alt="Hoa theo mùa" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-category">Mẹo hay</div>
+                        <h3 class="blog-title">Chọn Hoa Theo Mùa: Hướng Dẫn Chi Tiết</h3>
+                        <p class="blog-excerpt">
+                            Cách chọn hoa phù hợp với từng mùa trong năm để có được những bó hoa đẹp nhất.
+                        </p>
+                        <div class="blog-meta">
+                            <span>7 phút đọc</span>
+                            <a href="#" class="read-more">Đọc tiếp →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về Flower Shop</h3>
+                <ul>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                    <li><a href="why-choose-us.html">Tại Sao Nên Chọn Flower Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Chính Sách</h3>
+                <ul>
+                    <li><a href="shipping-policy.html">Chính Sách Vận Chuyển</a></li>
+                    <li><a href="refund-policy.html">Chính Sách Hoàn Tiền</a></li>
+                    <li><a href="privacy-policy.html">Bảo Mật Thông Tin</a></li>
+                    <li><a href="complaint-policy.html">Xử Lý Khiếu Nại</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Hỗ Trợ Khách Hàng</h3>
+                <ul>
+                    <li><a href="faq.html">Câu Hỏi Thường Gặp</a></li>
+                    <li><a href="payment-methods.html">Hình Thức Thanh Toán</a></li>
+                    <li>
+                        <p>📞 Hotline: 0911555441</p>
+                        <p>📧 Email: loclua229@gmail.com</p>
+                        <p>🏠 Địa chỉ: đường miếu ông hổ, khu vực, Ô Môn, Cần Thơ, Việt Nam</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kết Nối Với Chúng Tôi</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Flower Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
