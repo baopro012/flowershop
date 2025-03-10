@@ -207,127 +207,119 @@
     </header>
 
     <main class="page-template">
-        <div class="blog-container">
-            <h1>Blog</h1>
+        <h1>Blog</h1>
 
+        <div class="blog-controls">
             <div class="search-bar">
-                <input type="text" class="search-input" placeholder="Tìm kiếm bài viết...">
-                <button class="search-button">
+                <input type="text" id="blog-search" class="search-input" placeholder="Tìm kiếm bài viết...">
+                <button class="search-button" onclick="searchBlog()">
                     <i class="fas fa-search"></i>
                 </button>
             </div>
 
             <div class="blog-filters">
-                <button class="filter-button active">Tất cả</button>
-                <button class="filter-button">Chăm sóc hoa</button>
-                <button class="filter-button">Cắm hoa</button>
-                <button class="filter-button">Trang trí</button>
-                <button class="filter-button">Ý nghĩa hoa</button>
-                <button class="filter-button">Mẹo hay</button>
+                <button class="filter-button active" data-category="all">Tất cả</button>
+                <button class="filter-button" data-category="care">Chăm sóc hoa</button>
+                <button class="filter-button" data-category="arrangement">Cắm hoa</button>
+                <button class="filter-button" data-category="decoration">Trang trí</button>
+                <button class="filter-button" data-category="meaning">Ý nghĩa hoa</button>
+                <button class="filter-button" data-category="tips">Mẹo hay</button>
             </div>
+        </div>
 
-            <div class="featured-post">
-                <img src="images/red-roses.jpg" alt="Nghệ thuật cắm hoa hồng" class="featured-image">
-                <div class="featured-content">
-                    <span class="featured-tag">Bài viết nổi bật</span>
-                    <h2 class="featured-title">Nghệ Thuật Cắm Hoa: Từ Cơ Bản Đến Nâng Cao</h2>
-                    <p class="featured-excerpt">
-                        Khám phá những bí quyết và kỹ thuật cắm hoa chuyên nghiệp, từ việc chọn hoa, dụng cụ cần thiết đến các bước thực hiện chi tiết để tạo nên những tác phẩm nghệ thuật từ hoa tươi.
-                    </p>
-                    <a href="#" class="read-more">Đọc tiếp →</a>
+        <div class="featured-post">
+            <img src="images/red-roses.jpg" alt="Nghệ thuật cắm hoa" class="featured-image">
+            <div class="featured-content">
+                <span class="featured-tag">Bài viết nổi bật</span>
+                <h2 class="featured-title">Nghệ Thuật Cắm Hoa: Từ Cơ Bản Đến Nâng Cao</h2>
+                <p class="featured-excerpt">
+                    Khám phá những bí quyết và kỹ thuật cắm hoa chuyên nghiệp, từ việc chọn hoa, dụng cụ cần thiết đến các bước thực hiện chi tiết để tạo nên những tác phẩm nghệ thuật từ hoa tươi.
+                </p>
+                <div class="post-meta">
+                    <span><i class="far fa-calendar"></i> 10/03/2024</span>
+                    <span><i class="far fa-clock"></i> 10 phút đọc</span>
+                    <span><i class="far fa-comment"></i> 15 bình luận</span>
                 </div>
+                <a href="#" class="read-more" onclick="showBlogPost('featured-post')">Đọc tiếp →</a>
             </div>
+        </div>
 
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <img src="images/lily.jpg" alt="Chăm sóc hoa ly" class="blog-image">
-                    <div class="blog-content">
-                        <div class="blog-category">Chăm sóc hoa</div>
-                        <h3 class="blog-title">Bí Quyết Chăm Sóc Hoa Ly Luôn Tươi Đẹp</h3>
-                        <p class="blog-excerpt">
-                            Hướng dẫn chi tiết cách chăm sóc hoa ly để chúng luôn tươi đẹp và nở rộ trong thời gian dài.
-                        </p>
-                        <div class="blog-meta">
-                            <span>5 phút đọc</span>
-                            <a href="#" class="read-more">Đọc tiếp →</a>
+        <div class="blog-grid" id="blog-posts">
+            <article class="blog-card" data-category="care">
+                <img src="images/lily.jpg" alt="Chăm sóc hoa ly" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-category">Chăm sóc hoa</div>
+                    <h3 class="blog-title">Bí Quyết Chăm Sóc Hoa Ly Luôn Tươi Đẹp</h3>
+                    <p class="blog-excerpt">
+                        Hướng dẫn chi tiết cách chăm sóc hoa ly để chúng luôn tươi đẹp và nở rộ trong thời gian dài.
+                    </p>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> 09/03/2024</span>
+                        <span><i class="far fa-clock"></i> 5 phút đọc</span>
+                    </div>
+                    <a href="#" class="read-more" onclick="showBlogPost('post1')">Đọc tiếp →</a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="meaning">
+                <img src="images/sunflower.jpg" alt="Hoa hướng dương" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-category">Ý nghĩa hoa</div>
+                    <h3 class="blog-title">Ý Nghĩa Của Hoa Hướng Dương Trong Cuộc Sống</h3>
+                    <p class="blog-excerpt">
+                        Khám phá ý nghĩa sâu sắc và thông điệp mà hoa hướng dương mang lại trong văn hóa và cuộc sống.
+                    </p>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> 08/03/2024</span>
+                        <span><i class="far fa-clock"></i> 4 phút đọc</span>
+                    </div>
+                    <a href="#" class="read-more" onclick="showBlogPost('post2')">Đọc tiếp →</a>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="decoration">
+                <img src="images/hydrangea.jpg" alt="Hoa cẩm tú cầu" class="blog-image">
+                <div class="blog-content">
+                    <div class="blog-category">Trang trí</div>
+                    <h3 class="blog-title">Trang Trí Nhà Với Hoa Cẩm Tú Cầu</h3>
+                    <p class="blog-excerpt">
+                        Những ý tưởng độc đáo để trang trí không gian sống với hoa cẩm tú cầu tươi và khô.
+                    </p>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> 07/03/2024</span>
+                        <span><i class="far fa-clock"></i> 6 phút đọc</span>
+                    </div>
+                    <a href="#" class="read-more" onclick="showBlogPost('post3')">Đọc tiếp →</a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Modal Chi tiết bài viết -->
+        <div id="blog-modal" class="modal">
+            <div class="modal-content blog-detail">
+                <span class="close">&times;</span>
+                <div class="blog-detail-content">
+                    <div class="blog-detail-header">
+                        <h2 id="modal-blog-title"></h2>
+                        <div class="blog-meta" id="modal-blog-meta"></div>
+                    </div>
+                    <div class="blog-detail-image">
+                        <img src="" alt="" id="modal-blog-image">
+                    </div>
+                    <div class="blog-detail-text" id="modal-blog-content"></div>
+                    
+                    <!-- Phần bình luận -->
+                    <div class="blog-comments">
+                        <h3>Bình luận</h3>
+                        <form id="comment-form" class="comment-form">
+                            <textarea placeholder="Viết bình luận của bạn..." required></textarea>
+                            <button type="submit">Gửi bình luận</button>
+                        </form>
+                        <div id="comments-list">
+                            <!-- Các bình luận sẽ được thêm vào đây bằng JavaScript -->
                         </div>
                     </div>
-                </article>
-
-                <article class="blog-card">
-                    <img src="images/sunflower.jpg" alt="Hoa hướng dương" class="blog-image">
-                    <div class="blog-content">
-                        <div class="blog-category">Ý nghĩa hoa</div>
-                        <h3 class="blog-title">Ý Nghĩa Của Hoa Hướng Dương Trong Cuộc Sống</h3>
-                        <p class="blog-excerpt">
-                            Khám phá ý nghĩa sâu sắc và thông điệp mà hoa hướng dương mang lại trong văn hóa và cuộc sống.
-                        </p>
-                        <div class="blog-meta">
-                            <span>4 phút đọc</span>
-                            <a href="#" class="read-more">Đọc tiếp →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <img src="images/hydrangea.jpg" alt="Hoa cẩm tú cầu" class="blog-image">
-                    <div class="blog-content">
-                        <div class="blog-category">Trang trí</div>
-                        <h3 class="blog-title">Trang Trí Nhà Với Hoa Cẩm Tú Cầu</h3>
-                        <p class="blog-excerpt">
-                            Những ý tưởng độc đáo để trang trí không gian sống với hoa cẩm tú cầu tươi và khô.
-                        </p>
-                        <div class="blog-meta">
-                            <span>6 phút đọc</span>
-                            <a href="#" class="read-more">Đọc tiếp →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <img src="images/blog4.jpg" alt="Bảo quản hoa" class="blog-image">
-                    <div class="blog-content">
-                        <div class="blog-category">Mẹo hay</div>
-                        <h3 class="blog-title">5 Cách Bảo Quản Hoa Tươi Lâu Trong Mùa Hè</h3>
-                        <p class="blog-excerpt">
-                            Những mẹo đơn giản giúp giữ hoa tươi lâu hơn trong điều kiện thời tiết nóng ẩm.
-                        </p>
-                        <div class="blog-meta">
-                            <span>6 phút đọc</span>
-                            <a href="#" class="read-more">Đọc tiếp →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <img src="images/blog5.jpg" alt="Cắm hoa nghệ thuật" class="blog-image">
-                    <div class="blog-content">
-                        <div class="blog-category">Cắm hoa</div>
-                        <h3 class="blog-title">Nghệ Thuật Cắm Hoa Theo Phong Cách Ikebana</h3>
-                        <p class="blog-excerpt">
-                            Tìm hiểu về nghệ thuật cắm hoa Ikebana của Nhật Bản và cách áp dụng vào trang trí nhà cửa.
-                        </p>
-                        <div class="blog-meta">
-                            <span>8 phút đọc</span>
-                            <a href="#" class="read-more">Đọc tiếp →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <img src="images/blog6.jpg" alt="Hoa theo mùa" class="blog-image">
-                    <div class="blog-content">
-                        <div class="blog-category">Mẹo hay</div>
-                        <h3 class="blog-title">Chọn Hoa Theo Mùa: Hướng Dẫn Chi Tiết</h3>
-                        <p class="blog-excerpt">
-                            Cách chọn hoa phù hợp với từng mùa trong năm để có được những bó hoa đẹp nhất.
-                        </p>
-                        <div class="blog-meta">
-                            <span>7 phút đọc</span>
-                            <a href="#" class="read-more">Đọc tiếp →</a>
-                        </div>
-                    </div>
-                </article>
+                </div>
             </div>
         </div>
     </main>

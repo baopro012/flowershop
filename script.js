@@ -265,4 +265,115 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hiển thị thông báo thành công
         alert(`Đã thêm ${quantity} ${currentProduct.name} vào giỏ hàng!`);
     };
+
+    // Blog Functions
+    function searchBlog() {
+        const searchInput = document.getElementById('blog-search');
+        const searchTerm = searchInput.value.toLowerCase();
+        const blogPosts = document.querySelectorAll('.blog-card');
+
+        blogPosts.forEach(post => {
+            const title = post.querySelector('.blog-title').textContent.toLowerCase();
+            const content = post.querySelector('.blog-excerpt').textContent.toLowerCase();
+            const category = post.querySelector('.blog-category').textContent.toLowerCase();
+
+            if (title.includes(searchTerm) || content.includes(searchTerm) || category.includes(searchTerm)) {
+                post.style.display = 'block';
+            } else {
+                post.style.display = 'none';
+            }
+        });
+    }
+
+    // Filter blog posts by category
+    document.querySelectorAll('.filter-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.getAttribute('data-category');
+            const posts = document.querySelectorAll('.blog-card');
+
+            // Update active button
+            document.querySelectorAll('.filter-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            button.classList.add('active');
+
+            // Filter posts
+            posts.forEach(post => {
+                if (category === 'all' || post.getAttribute('data-category') === category) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Blog post modal
+    const blogModal = document.getElementById('blog-modal');
+    const blogPosts = {
+        'featured-post': {
+            title: 'Nghệ Thuật Cắm Hoa: Từ Cơ Bản Đến Nâng Cao',
+            image: 'images/red-roses.jpg',
+            content: `<p>Nghệ thuật cắm hoa là một kỹ năng tuyệt vời để trang trí không gian sống và thể hiện sự sáng tạo của bạn. Trong bài viết này, chúng ta sẽ khám phá các kỹ thuật cắm hoa từ cơ bản đến nâng cao.</p>
+                      <h3>1. Chuẩn bị dụng cụ</h3>
+                      <p>Để cắm hoa đẹp, bạn cần chuẩn bị:</p>
+                      <ul>
+                          <li>Kéo cắt hoa chuyên dụng</li>
+                          <li>Bình hoặc lọ hoa phù hợp</li>
+                          <li>Xốp cắm hoa</li>
+                          <li>Dây buộc</li>
+                      </ul>
+                      <h3>2. Chọn hoa và phụ kiện</h3>
+                      <p>Việc chọn hoa và phụ kiện phù hợp sẽ quyết định 50% thành công của tác phẩm...</p>`,
+            meta: '<span><i class="far fa-calendar"></i> 10/03/2024</span><span><i class="far fa-clock"></i> 10 phút đọc</span><span><i class="far fa-comment"></i> 15 bình luận</span>'
+        },
+        'post1': {
+            title: 'Bí Quyết Chăm Sóc Hoa Ly Luôn Tươi Đẹp',
+            image: 'images/lily.jpg',
+            content: `<p>Hoa ly là một trong những loài hoa được yêu thích nhất vì vẻ đẹp và hương thơm độc đáo. Để giữ cho hoa ly luôn tươi đẹp, bạn cần lưu ý những điểm sau:</p>
+                      <h3>1. Chọn hoa ly</h3>
+                      <p>Khi chọn hoa ly, hãy chọn những nụ hoa còn săn chắc, màu sắc tươi sáng...</p>`,
+            meta: '<span><i class="far fa-calendar"></i> 09/03/2024</span><span><i class="far fa-clock"></i> 5 phút đọc</span>'
+        },
+        // Thêm các bài viết khác tương tự
+    };
+
+    function showBlogPost(postId) {
+        const post = blogPosts[postId];
+        if (!post) return;
+
+        document.getElementById('modal-blog-title').textContent = post.title;
+        document.getElementById('modal-blog-image').src = post.image;
+        document.getElementById('modal-blog-image').alt = post.title;
+        document.getElementById('modal-blog-content').innerHTML = post.content;
+        document.getElementById('modal-blog-meta').innerHTML = post.meta;
+
+        blogModal.style.display = 'block';
+    }
+
+    // Comment system
+    document.getElementById('comment-form')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const commentText = this.querySelector('textarea').value;
+        if (!commentText.trim()) return;
+
+        const commentsList = document.getElementById('comments-list');
+        const newComment = document.createElement('div');
+        newComment.className = 'comment-item';
+        newComment.innerHTML = `
+            <div class="comment-author">Khách</div>
+            <div class="comment-date">${new Date().toLocaleDateString()}</div>
+            <div class="comment-text">${commentText}</div>
+        `;
+
+        commentsList.insertBefore(newComment, commentsList.firstChild);
+        this.querySelector('textarea').value = '';
+    });
+
+    // Close modals when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === blogModal) {
+            blogModal.style.display = 'none';
+        }
+    });
 }); 
