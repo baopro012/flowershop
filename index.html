@@ -6,6 +6,7 @@
     <title>Cửa hàng hoa tươi</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
 </head>
 <body>
     <header>
@@ -116,9 +117,148 @@
     </div>
 
     <main>
-        <section id="hero">
-            <h1>Chào mừng đến với cửa hàng hoa tươi</h1>
-            <p>Nơi mang đến những bông hoa tươi thắm nhất cho người thân yêu của bạn</p>
+        <!-- Hero Section với Slider -->
+        <section id="hero" class="swiper hero-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url('images/slider/slide1.jpg');">
+                    <div class="slide-content">
+                        <h1>Chào mừng đến với Flower Shop</h1>
+                        <p>Nơi mang đến những bông hoa tươi thắm nhất cho người thân yêu của bạn</p>
+                        <a href="#products" class="cta-button">Khám phá ngay</a>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url('images/slider/slide2.jpg');">
+                    <div class="slide-content">
+                        <h1>Ưu đãi đặc biệt</h1>
+                        <p>Giảm giá 20% cho đơn hàng đầu tiên</p>
+                        <a href="#products" class="cta-button">Mua ngay</a>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url('images/slider/slide3.jpg');">
+                    <div class="slide-content">
+                        <h1>Hoa Sinh Nhật Độc Đáo</h1>
+                        <p>Tạo nên những khoảnh khắc đáng nhớ</p>
+                        <a href="birthday.html" class="cta-button">Xem bộ sưu tập</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </section>
+
+        <!-- Tại sao chọn chúng tôi -->
+        <section id="why-choose-us">
+            <h2>Tại Sao Chọn Flower Shop?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Giao Hàng Nhanh</h3>
+                    <p>Giao hàng trong vòng 2 giờ trong khu vực nội thành</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-flower"></i>
+                    <h3>Hoa Tươi Mới</h3>
+                    <p>Hoa được cắt và làm tươi mỗi ngày</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Đảm Bảo Chất Lượng</h3>
+                    <p>Cam kết hoàn tiền nếu không hài lòng</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Hỗ Trợ 24/7</h3>
+                    <p>Luôn sẵn sàng phục vụ mọi lúc bạn cần</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sản phẩm bán chạy -->
+        <section id="best-sellers">
+            <h2>Sản Phẩm Bán Chạy</h2>
+            <div class="swiper best-sellers-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="badge">Best Seller</div>
+                            <img src="images/red-roses.jpg" alt="Hoa hồng đỏ">
+                            <h3>Hoa hồng đỏ</h3>
+                            <p>Biểu tượng của tình yêu và sự lãng mạn</p>
+                            <p class="price">350.000đ</p>
+                            <button class="add-to-cart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <img src="images/lily.jpg" alt="Hoa ly">
+                            <h3>Hoa ly</h3>
+                            <p>Thanh khiết và tinh tế</p>
+                            <p class="price">280.000đ</p>
+                            <button class="add-to-cart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <img src="images/sunflower.jpg" alt="Hoa hướng dương">
+                            <h3>Hoa hướng dương</h3>
+                            <p>Tràn đầy năng lượng tích cực</p>
+                            <p class="price">200.000đ</p>
+                            <button class="add-to-cart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <img src="images/hydrangea.jpg" alt="Hoa cẩm tú cầu">
+                            <h3>Hoa cẩm tú cầu</h3>
+                            <p>Vẻ đẹp dịu dàng, thanh lịch</p>
+                            <p class="price">320.000đ</p>
+                            <button class="add-to-cart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Đánh giá khách hàng -->
+        <section id="testimonials">
+            <h2>Khách Hàng Nói Gì Về Chúng Tôi?</h2>
+            <div class="swiper testimonials-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <i class="fas fa-quote-left"></i>
+                                <p>"Hoa luôn tươi và đẹp, giao hàng đúng hẹn. Tôi rất hài lòng với dịch vụ của Flower Shop!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="images/testimonials/customer1.jpg" alt="Khách hàng">
+                                <div>
+                                    <h4>Nguyễn Thị Hương</h4>
+                                    <p>Khách hàng thân thiết</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <i class="fas fa-quote-left"></i>
+                                <p>"Đặt hoa sinh nhật cho bạn, shop tư vấn rất nhiệt tình và chuyên nghiệp."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="images/testimonials/customer2.jpg" alt="Khách hàng">
+                                <div>
+                                    <h4>Trần Văn Nam</h4>
+                                    <p>Khách hàng mới</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </section>
 
         <section id="products">
@@ -311,6 +451,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 
