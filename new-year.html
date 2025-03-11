@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoa Tết - Flower Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🌸 Flower Shop</div>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="index.html#products">Sản phẩm</a></li>
+                <li><a href="birthday.html">Hoa Sinh Nhật</a></li>
+                <li><a href="index.html#contact">Liên hệ</a></li>
+                <li>
+                    <a href="#" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="birthday-page">
+        <section class="page-header">
+            <h1>Hoa Tết 2024</h1>
+            <p>Chào đón năm mới với những bó hoa tươi thắm và cây cảnh may mắn</p>
+        </section>
+
+        <section class="categories">
+            <h2>Hoa Tết Truyền Thống</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="images/newyear/mai.jpg" alt="Cây Mai Vàng">
+                    <h3>Cây Mai Vàng</h3>
+                    <p>Mai vàng trang trí Tết - Biểu tượng may mắn</p>
+                    <p class="price">2.999.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+
+                <div class="category-card">
+                    <img src="images/newyear/dao.jpg" alt="Cành Đào Tết">
+                    <h3>Cành Đào Tết</h3>
+                    <p>Đào thế đẹp - Mang không khí Tết về nhà</p>
+                    <p class="price">1.999.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+
+                <div class="category-card">
+                    <img src="images/newyear/cuc.jpg" alt="Chậu Cúc Mâm Xôi">
+                    <h3>Chậu Cúc Mâm Xôi</h3>
+                    <p>Cúc mâm xôi vàng - Trang trí Tết truyền thống</p>
+                    <p class="price">899.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <h2>Cây Cảnh May Mắn</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="images/newyear/quyt.jpg" alt="Cây Quất">
+                    <h3>Cây Quất</h3>
+                    <p>Cây quất cảnh - Biểu tượng của sự thịnh vượng</p>
+                    <p class="price">1.499.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+
+                <div class="category-card">
+                    <img src="images/newyear/phat.jpg" alt="Cây Phát Tài">
+                    <h3>Cây Phát Tài</h3>
+                    <p>Cây phát tài - Mang lại tài lộc</p>
+                    <p class="price">799.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+
+                <div class="category-card">
+                    <img src="images/newyear/truc.jpg" alt="Cây Trúc">
+                    <h3>Cây Trúc</h3>
+                    <p>Cây trúc phong thủy - Biểu tượng của sự bền vững</p>
+                    <p class="price">599.000đ</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="special-offers">
+            <h2>Ưu Đãi Tết</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <i class="fas fa-gift"></i>
+                    <h3>Quà Tặng</h3>
+                    <p>Tặng lì xì may mắn cho đơn hàng từ 2 triệu</p>
+                </div>
+                <div class="offer-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Ưu Đãi Sớm</h3>
+                    <p>Giảm 15% cho đơn hàng đặt trước 15 ngày Tết</p>
+                </div>
+                <div class="offer-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Giao Hàng</h3>
+                    <p>Miễn phí giao hàng trong 3 ngày Tết</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tet-tips">
+            <h2>Mẹo Trang Trí Tết</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Trang Trí Nhà Cửa</h3>
+                    <p>Hướng dẫn trang trí nhà đón Tết theo phong thủy</p>
+                    <a href="#" class="read-more">Xem thêm →</a>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Chăm Sóc Cây</h3>
+                    <p>Cách chăm sóc cây cảnh ngày Tết tươi lâu</p>
+                    <a href="#" class="read-more">Xem thêm →</a>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-coins"></i>
+                    <h3>Phong Thủy</h3>
+                    <p>Cách bày trí hoa và cây cảnh hợp phong thủy</p>
+                    <a href="#" class="read-more">Xem thêm →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về chúng tôi</h3>
+                <p>Flower Shop - Cửa hàng hoa tươi số 1 tại Cần Thơ. Chuyên cung cấp hoa tươi, hoa sinh nhật, hoa khai trương với dịch vụ giao hàng nhanh trong 2h.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liên hệ</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận Ninh Kiều, TP. Cần Thơ</p>
+                <p><i class="fas fa-phone"></i> 0123.456.789</p>
+                <p><i class="fas fa-envelope"></i> info@flowershop.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Theo dõi chúng tôi</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/flowershop" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/flowershop" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@flowershop" target="_blank" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://zalo.me/0123456789" target="_blank" title="Zalo">
+                        <img src="images/zalo-icon.png" alt="Zalo" class="zalo-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Giờ mở cửa</h3>
+                <p>Thứ 2 - Chủ nhật: 8:00 - 21:00</p>
+                <p>Phục vụ cả ngày lễ</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Flower Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
